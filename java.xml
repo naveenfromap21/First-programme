@@ -1,0 +1,15 @@
+[#ftl]
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.watch4net.com/APG/Collecting" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.watch4net.com/APG/Collecting collecting.xsd ">
+	<connectors>
+		<connector enabled="true" name="Backend" type="Socket-Connector" config="conf/socketconnector.xml" />
+	</connectors>
+	<filters>
+		<filter enabled="true" name="FailOver" next="Backend" config="FailOver-Filter/${module['failover-filter'].instance}/conf/failover-backend.xml" />
+		<filter enabled="true" name="DataEnrichment" next="FailOver" config="Property-Tagging-Filter/${module['property-tagging-filter'].instance}/conf/property-tagging-filter.xml" />
+	</filters>
+	<collectors>
+		<!-- your stuff here -->
+	</collectors>
+</config>
