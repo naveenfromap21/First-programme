@@ -7,7 +7,7 @@
 	</connectors>
 	<filters>
 		<filter enabled="true" name="FailOver" next="Backend" config="FailOver-Filter/${module['failover-filter'].instance}/conf/failover-backend.xml" />
-		<filter enabled="true" name="DataEnrichment" next="FailOver" config="Property-Tagging-Filter/${module['property-tagging-filter'].instance}/conf/property-tagging-filter.xml" />
+		<filter enabled="false" name="DataEnrichment" next="FailOver" config="Property-Tagging-Filter/${module['property-tagging-filter'].instance}/conf/property-tagging-filter.xml" />
 	</filters>
 	<collectors>
 		<!-- your stuff here -->
